@@ -1,8 +1,8 @@
-import { TEST_DATA } from '../actions';
+import { GET_NETFLIXORIGINAL } from '../actions';
 
-export const testData = (state = [], action) => {
+export const netflixoriginal = (state = [], action) => {
     switch(action.type) {
-        case TEST_DATA:
+        case GET_NETFLIXORIGINAL:
             return {
                 ...state,
                 movies: action.data

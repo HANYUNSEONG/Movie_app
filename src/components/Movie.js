@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Movie = ({ img, name }) => {
+import './Movie.scss';
+
+const Movie = ({ name, backimg, poster, id, idx }) => {
     return (
-        <div>
-            <h1>{name}</h1>
+        <div
+            id='movie_item'
+            className={`movie_item_${id}`}
+            // style={{backgroundImage:`url(https://image.tmdb.org/t/p/w200${poster})`}}
+        >
+            <h4>{name}</h4>
             <img
-                src={`https://image.tmdb.org/t/p/w200${img}`}
-                alt="img"
+                // src={`https://image.tmdb.org/t/p/w200${poster}`}
+                alt={id}
             />
         </div>
     )

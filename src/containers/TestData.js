@@ -16,17 +16,18 @@ const TestData = () => {
     
     let lists = movieData.data && movieData.data.results.map((data, idx) =>
         <Movie
-            key={idx}
+            key={data.id}
+            id={data.id}
+            idx={idx}
+            name={data.name}
             id={data.id}
             img={data.backdrop_path}
-            name={data.name}
         />
     );
-    console.log(movieData)
 
     return (
         <>
-            {lists}
+            {/* {lists} */}
         </>
     )
 }

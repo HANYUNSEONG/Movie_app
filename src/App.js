@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 
-import TestData from './containers/TestData';
+import Layout from './containers/Layout';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import './default.scss';
 
 class App extends Component {
     render() {
         return (
             <>
-                <TestData />
+                <Header />
+                <Layout />
+                <Footer />
             </>
         )
     }

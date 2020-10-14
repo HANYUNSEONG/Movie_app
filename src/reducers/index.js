@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { testData } from './testData';
+import { netflixoriginal } from './NetflixoriginalApi';
 
 export const rootReducer = combineReducers({
-    testData: testData
+    netflixoriginal
 });

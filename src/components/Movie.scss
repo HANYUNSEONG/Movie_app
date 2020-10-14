@@ -1,0 +1,15 @@
+#movie_item {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 1px #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    & > h4 {
+        width: 100%;
+    }
+    padding: 10px;
+}
