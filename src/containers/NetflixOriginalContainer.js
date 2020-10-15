@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NetfilxOriginalData } from '../actions';
 
 import Movie from '../components/Movie';
+import SectionTitle from '../components/SectionTitle';
 
 const NetflixOriginal = ({ style }) => {
     const dispatch = useDispatch();
@@ -20,16 +21,18 @@ const NetflixOriginal = ({ style }) => {
             id={data.id}
             idx={idx}
             name={data.name}
-            id={data.id}
             poster={data.poster_path}
             backimg={data.backdrop_path}
         />
     );
 
     return (
-        <div className="content_box" style={style}>
-            {lists}
-            <div style={{clear:'both'}}></div>
+        <div className="wrap">
+            <SectionTitle title="Netflix Original" />
+            <div className="content_box" style={style}>
+                {lists}
+                <div style={{clear:'both'}}></div>
+            </div>
         </div>
     )
 }

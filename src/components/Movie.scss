@@ -10,6 +10,9 @@
     align-items: center;
     & > h4 {
         width: 100%;
+        font-weight: 300;
     }
-    padding: 10px;
+    & > img {
+        width: 100%;
+    }
 }

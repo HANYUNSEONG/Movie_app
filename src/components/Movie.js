@@ -7,13 +7,15 @@ const Movie = ({ name, backimg, poster, id, idx }) => {
         <div
             id='movie_item'
             className={`movie_item_${id}`}
-            // style={{backgroundImage:`url(https://image.tmdb.org/t/p/w200${poster})`}}
+            // style={{backgroundImage:`url(https://image.tmdb.org/t/p/w200${backimg})`}}
         >
-            <h4>{name}</h4>
             <img
                 // src={`https://image.tmdb.org/t/p/w200${poster}`}
                 alt={id}
             />
+            <div>
+                <h4>{name}</h4>
+            </div>
         </div>
     )
 }
