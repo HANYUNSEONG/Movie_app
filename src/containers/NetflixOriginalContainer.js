@@ -5,8 +5,9 @@ import { NetfilxOriginalData } from '../actions';
 
 import Movie from '../components/Movie';
 import SectionTitle from '../components/SectionTitle';
+import ContentBox from '../components/ContentBox';
 
-const NetflixOriginal = ({ style }) => {
+const NetflixOriginal = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -29,10 +30,9 @@ const NetflixOriginal = ({ style }) => {
     return (
         <div className="wrap">
             <SectionTitle title="Netflix Original" />
-            <div className="content_box" style={style}>
+            <ContentBox>
                 {lists}
-                <div style={{clear:'both'}}></div>
-            </div>
+            </ContentBox>
         </div>
     )
 }

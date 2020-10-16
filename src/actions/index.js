@@ -18,10 +18,10 @@ export const NetfilxOriginalData = () => {
         // Netfilx Original
         return axios.get(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_networks=213`)
         .then(result => {
-            dispatch(NetfilxOriginal(result))
+            dispatch(NetfilxOriginal(result, "SUCCESS"))
         })
         .catch(err => {
-            dispatch(Toprated("ERROR"))
+            dispatch(Toprated(err, "ERROR"))
         })
     }
 }
@@ -36,7 +36,8 @@ export const Toprated = (data, status) => {
 
 export const TopratedData = () => {
     return (dispatch) => {
-        return axios.get(`${BASE_URL}/movie/top_rated?api_keay=${API_KEY}&language=en-US`)
+        // Top Rated
+        return axios.get(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=ko-KR`)
         .then(result => {
             dispatch(Toprated(result, "SUCCESS"))
         })
