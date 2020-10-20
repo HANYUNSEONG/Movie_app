@@ -23,7 +23,7 @@ const TopRated = () => {
             key={data.id}
             id={data.id}
             idx={idx}
-            name={data.title}
+            title={data.title}
             poster={data.poster_path}
             backimg={data.backdrop_path}
         />

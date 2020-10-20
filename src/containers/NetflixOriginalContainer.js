@@ -16,12 +16,12 @@ const NetflixOriginal = () => {
 
     const result = useSelector(state => state.netflixoriginal.movies) || [];
 
-    let lists = result.data && result.data.results.map((data, idx) => 
+    let lists = result.data && result.data.results.map((data, idx) =>
         <Movie
             key={data.id}
             id={data.id}
             idx={idx}
-            name={data.name}
+            title={data.name}
             poster={data.poster_path}
             backimg={data.backdrop_path}
         />

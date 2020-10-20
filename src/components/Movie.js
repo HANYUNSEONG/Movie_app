@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Movie.scss';
 
-const Movie = ({ name, backimg, poster, id, idx }) => {
+const Movie = ({ title, backimg, poster, id, idx }) => {
     return (
         <div
             className={`movie_item movie_item_${id}`}
@@ -14,7 +14,7 @@ const Movie = ({ name, backimg, poster, id, idx }) => {
                 alt={id}
             /> */}
             <div className="text_box">
-                <h4>{name}</h4>
+                <h4>{title}</h4>
             </div>
         </div>
     )

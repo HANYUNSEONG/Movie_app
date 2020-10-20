@@ -1,0 +1,32 @@
+header {
+    min-height: 60px;
+    padding: 10px;
+    background-color: #090909;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    & a {
+        color: #fff;
+    }
+    & > nav {
+        margin-left: 40px;
+        ul {
+            display: flex;
+            li:not(:first-child) {
+                margin-left: 20px;
+            }
+            li a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    & > .search_box {
+        position: absolute;
+        right: 10px;
+        svg {
+            cursor: pointer;
+        }
+    }
+}
