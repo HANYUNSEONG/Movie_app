@@ -4,11 +4,15 @@ import Modal from './Modal';
 
 import './Movie.scss';
 
-const Movie = ({ title, backdrop_path, poster_path, id, idx }) => {
+const Movie = ({ title, backdrop_path, poster_path, id, idx, overview }) => {
     return (
         <>
             <Modal
                 id={id}
+                backdrop_path={backdrop_path}
+                poster_path={poster_path}
+                title={title}
+                overview={overview}
             />
             <div
                 className={`movie_item movie_item_${id}`}
