@@ -21,11 +21,7 @@ const TopRated = () => {
     const lists = movies && movies.data.results.map((data, idx) =>
         <Movie
             key={data.id}
-            id={data.id}
-            idx={idx}
-            title={data.title}
-            poster={data.poster_path}
-            backimg={data.backdrop_path}
+            {...data}
         />
     )
 

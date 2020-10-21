@@ -9,13 +9,11 @@ import axios from 'axios';
 import './default.scss';
 
 class App extends Component {
-    state = {
-        users: []
-    }
     componentDidMount() {
         axios.get('/api')
-            .then(res => console.log(res))
+            .then(res => this.setState(res.data))
     }
+    
     render() {
         return (
             <>

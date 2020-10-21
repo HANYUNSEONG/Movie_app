@@ -1,0 +1,22 @@
+@import '../default.scss';
+
+.modal_wrap {
+    width: 80vw;
+    height: 50rem;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: $centerTransform;
+    transition: .5s;
+    background-color: #090909;
+    color: #fff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.show_modal {
+    opacity: 1;
+    visibility: initial;
+}

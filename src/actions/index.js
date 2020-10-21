@@ -6,6 +6,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 export const GET_NETFLIXORIGINAL = 'GET_NETFLIXORIGINAL';
 export const GET_TOPRATED = 'GET_TOPRATED';
 export const GET_TREND = 'GET_TREND';
+export const GET_MOVIEIDSEARCH = 'GET_MOVIEIDSEARCH';
 
 export const NetfilxOriginal = (data) => {
     return {
@@ -65,6 +66,26 @@ export const TrendData = () => {
         })
         .catch(err => {
             dispatch(Trend(err, 'ERROR'))
+        })
+    }
+}
+
+export const MovieIdSearch = (data, status) => {
+    return {
+        type: 'GET_MOVIEIDSEARCH',
+        data,
+        status
+    }
+}
+
+export const MovieIdSearchData = (id) => {
+    return (dispatch) => {
+        return axios.get(`${BASE_URL}/movie/${id}&language=ko-KR`)
+        .then(result => {
+            dispatch(MovieIdSearch(result, 'SUCCESS'))
+        })
+        .catch(err => {
+            dispatch(MovieIdSearch(err, 'ERROR'))
         })
     }
 }
