@@ -7,3 +7,4 @@
 ## 사용한 스택
 - Typescript
 - React
+- Redux + Redux-saga
