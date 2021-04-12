@@ -12,5 +12,5 @@ useEffect(() => {
 4. 리듀서는 store에 새로운 값을 저장
 5. store의 state에 subscribe하고 있던 컴포넌트에 변경된 값을 뿌림
 
-* 이게 맞나..? *
+*이게 맞나..?*
 - 참고해보기: https://velog.io/@kyjun/redux-saga-%ED%9D%90%EB%A6%84-2v59xa3d
