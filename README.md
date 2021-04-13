@@ -8,3 +8,4 @@
 - Typescript
 - React
 - Redux + Redux-saga
+- antd + emotion

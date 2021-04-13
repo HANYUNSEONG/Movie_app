@@ -1,4 +1,4 @@
-### 흐름 메모
+### 메모
 
 1. view(컴포넌트?)에서 액션이 발생하고 dispatch로 넘긴다
 ```js
@@ -14,3 +14,28 @@ useEffect(() => {
 
 * 이게 맞나..? *
 - 참고해보기: https://velog.io/@kyjun/redux-saga-%ED%9D%90%EB%A6%84-2v59xa3d
+
+### antd 적용
+```
+> npm install --save-dev style-loader css-loader babel-plugin-import
+> npm install --save antd
+```
+- webpack.config.js
+```js
+// module.rules에 추가
+{
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader']
+}
+```
+
+- .babelrc에 추가
+```
+"plugins": [[
+  "import",
+  {
+    "libraryName": "antd",
+    "style": "css"
+  }
+]]
+```

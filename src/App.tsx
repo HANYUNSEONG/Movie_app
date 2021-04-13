@@ -1,18 +1,25 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadData } from './actions/movie';
+import React from 'react';
+
+// antd 적용
+import { Layout } from 'antd';
+import 'antd/dist/antd.css';
+
+// emotion 적용
+import { Global } from '@emotion/react';
+import { GlobalStyle } from './theme';
+
+// 컴포넌트
+import MovieList from './components/MovieList';
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadData());
-  }, []);
-
-  const data = useSelector(state => state);
-
+  const { Header } = Layout;
   return (
-    <>App</>
+    <>  
+      {/* 글로벌 스타일 적용 */}
+      <Global styles={GlobalStyle} />
+      <Header>header</Header>
+      <MovieList />
+    </>
   )
 }
 
