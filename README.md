@@ -14,6 +14,11 @@
 ```
 > npm install --save gh-pages
 ```
+or
+```
+> npm install --save-dev gh-pages
+```
+
 - package.json 추가
 ```json
 "homepage": "https://hanyunseong.github.io/movie_app",
