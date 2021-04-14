@@ -9,3 +9,22 @@
 - React
 - Redux + Redux-saga
 - antd + emotion
+
+## gh-pages로 배포하기 (github page)
+```
+> npm install --save gh-pages
+```
+- package.json 추가
+```json
+"homepage": "https://hanyunseong.github.io/movie_app",
+"scripts": {
+  // ...
+  "build": "webpack",
+  "deploy": "gh-pages -d build"
+},
+```
+
+```
+> npm run build
+> npm run deploy
+```
