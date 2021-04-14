@@ -6,8 +6,9 @@ export function* requestGetData() {
   yield takeEvery(GET_MOVIE_DATA_REQUEST, getfetchData);
 }
 
-export function* getfetchData() {
-  let result: object = yield call(API.getMovieDatas);
+export function* getfetchData(params: any) {
+  const { page } = params
+  let result: object = yield call(API.getMovieDatas, page);
   yield put({ type: GET_MOVIE_DATA, data: result });
 }
 

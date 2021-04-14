@@ -2,12 +2,18 @@ import {
   GET_MOVIE_DATA
 } from '../actions/movie';
 
-export const movie = (state: any = [], action: any) => {
+const initialState = {
+  page: 0 as number,
+  movieData: [] as object
+}
+
+const movie = (state: any = initialState, action: any) => {
   switch(action.type) {
     case GET_MOVIE_DATA:
       return {
         ...state,
-        result: action.data
+        movieData: [...state.movieData, ...action.data.data.results],
+        page: action.data.data.page
       }
     default:
       return state;

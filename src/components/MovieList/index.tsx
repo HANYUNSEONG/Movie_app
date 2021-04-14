@@ -1,27 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row } from 'antd';
-import { css } from '@emotion/css';
 
-import { loadData } from '../../actions/movie';
+import { loadMovieData } from '../../actions/movie';
+import { loadGenresData } from '../../actions/genres';
 import { RootState } from '../../reducers';
 import Movie from '../../components/Movie';
 
-const MovieList:React.FC<any> = (props) => {
+const MovieList:React.FC<any> = () => {
   const dispatch = useDispatch();
+  let n = 1;
+
+  const infiniteScroll = () => {
+    let { clientHeight, scrollTop, scrollHeight } = document.documentElement;
+    if(scrollHeight <= (clientHeight + scrollTop)) {
+      n += 1;
+      dispatch(loadMovieData(n));
+    }
+  }
 
   useEffect(() => {
-    dispatch(loadData());
+    dispatch(loadMovieData());
+    dispatch(loadGenresData());
+
+    window.addEventListener('scroll', infiniteScroll);
   }, []);
 
-  const movieData = useSelector((state: RootState) => { return state.movie.result });
+  const { movieData, page, genresData } = useSelector((state: RootState) => {
+    return {
+      movieData: state.movie.movieData as [],
+      page: state.movie.page as number,
+      genresData: state.genres.genresData as any
+    }
+  });
   
   return (
-    <Row gutter={[12, 12]} className="antd_grid_custom">
+    <Row gutter={[16, 16]} className="antd_grid_custom">
         {
-          movieData && movieData.data.results.map((data: any, idx: any) =>
+          movieData && movieData.map((data: any, idx: any) =>
             <Movie
               key={idx}
+              genres={genresData && genresData.data.genres.filter((d: any) => data.genre_ids.indexOf(d.id) !== -1 && d)}
               {...data}
             />
           )
