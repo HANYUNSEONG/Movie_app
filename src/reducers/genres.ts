@@ -1,5 +1,6 @@
 import {
-  GET_GENRES_DATA
+  GET_GENRES_DATA,
+  SET_GENRES
 } from '../actions/genres';
 
 const genres = (state: any = [], action: any) => {
@@ -10,6 +11,11 @@ const genres = (state: any = [], action: any) => {
         genresData: action.data
       }
 
+    case SET_GENRES:
+      return {
+        ...state,
+        genres: action.data
+      }
     default:
       return state;
   }

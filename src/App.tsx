@@ -9,7 +9,9 @@ import { Global } from '@emotion/react';
 import { GlobalStyle } from './theme';
 
 // 컴포넌트
+import Wrap from './components/Wrap';
 import MovieList from './components/MovieList';
+import GenresFilter from './components/GenresFilter';
 
 const App: React.FC = () => {
   const { Header } = Layout;
@@ -18,7 +20,10 @@ const App: React.FC = () => {
       {/* 글로벌 스타일 적용 */}
       <Global styles={GlobalStyle} />
       <Header>header</Header>
-      <MovieList />
+      <Wrap>
+        <GenresFilter />
+        <MovieList />
+      </Wrap>
     </>
   )
 }

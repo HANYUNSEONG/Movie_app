@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/react';
-import styled from '@emotion/styled';
 import React from 'react';
 import { Row, Col, Card } from 'antd';
+import { GenresCard } from '../../theme';
 
 const MovieStyle = css`
   height: 100%;
@@ -30,13 +30,6 @@ const MovieContentStyle = css`
   flex: 1;
 `;
 
-const GenresCard = styled.div`
-  padding: .5em 1em;
-  background-color: #eee;
-  border-radius: 5px;
-  display: inline-block;
-`;
-
 const RowStyle = css`
   column-gap: 8px;
 `;
@@ -50,7 +43,7 @@ const Movie:React.FC<any> = (props) => {
           <img src={`https://image.tmdb.org/t/p/w200/${poster_path}`} alt={`${title}_poster`} />
         </div>
         <div css={MovieContentStyle}>
-          <p>{overview}</p> 
+          <p>{overview}</p>
           <Row gutter={[0, 8]} css={RowStyle}>
             {
               genres && genres.map((d: any, idx: any) =>

@@ -1,5 +1,6 @@
 import {
-  GET_MOVIE_DATA
+  GET_MOVIE_DATA,
+  RESET_MOVIE_DATA
 } from '../actions/movie';
 
 const initialState = {
@@ -14,6 +15,11 @@ const movie = (state: any = initialState, action: any) => {
         ...state,
         movieData: [...state.movieData, ...action.data.data.results],
         page: action.data.data.page
+      }
+    case RESET_MOVIE_DATA:
+      return {
+        ...state,
+        movieData: []
       }
     default:
       return state;

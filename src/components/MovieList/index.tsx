@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row } from 'antd';
 
@@ -26,11 +26,12 @@ const MovieList:React.FC<any> = () => {
     window.addEventListener('scroll', infiniteScroll);
   }, []);
 
-  const { movieData, page, genresData } = useSelector((state: RootState) => {
+  const { movieData, genresData } = useSelector((state: RootState) => {
     return {
       movieData: state.movie.movieData as [],
       page: state.movie.page as number,
-      genresData: state.genres.genresData as any
+      genresData: state.genres.genresData as any,
+      genres: state.genres.genres as object,
     }
   });
   
