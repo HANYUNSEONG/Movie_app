@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal as ModalAntd } from 'antd';
+import { Modal as ModalAntd, Row } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../reducers';
 import { setModalData } from '../../actions/modal';
@@ -19,11 +19,13 @@ const Modal:React.FC = () => {
     dispatch(setModalData())
   }
 
-  const { title, genre_ids } = (modalData !== undefined && modalData) && modalData;
+  const { title, genre_ids, backdrop_path } = (modalData !== undefined && modalData) && modalData;
 
   return (
     <ModalAntd title={title} visible={isModal} onCancel={handleCancel} footer={null}>
-      <Genreses genre_ids={genre_ids} />
+      <Row gutter={[0, 8]} style={{columnGap: "8px"}}>
+        <Genreses genre_ids={genre_ids} />
+      </Row>
     </ModalAntd>
   )
 }
