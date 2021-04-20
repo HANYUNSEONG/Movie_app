@@ -12,7 +12,6 @@
 - Redux + Redux-saga
 - antd + emotion
 - webpack
-- babel
 
 ## gh-pages로 배포하기 (github page)
 ```
