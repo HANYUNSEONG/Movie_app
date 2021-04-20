@@ -1,14 +1,18 @@
 # 영화 API를 사용해서 데이터를 가져와보자
 - [영화 데이터 API 사이트](https://developers.themoviedb.org/3/getting-started)
 
-## 목표
-- [ ] 수동으로 세팅해보기 (React, Redux-saga, Typescript)
+## 목적
+- 수동으로 세팅해보기 (React, Redux-saga, Typescript)
+- Redux-saga 적용해보기
+- Typescript 적용해보기
 
 ## 사용한 스택
 - Typescript
 - React
 - Redux + Redux-saga
 - antd + emotion
+- webpack
+- babel
 
 ## gh-pages로 배포하기 (github page)
 ```
