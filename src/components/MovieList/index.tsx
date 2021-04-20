@@ -29,9 +29,7 @@ const MovieList:React.FC<any> = () => {
   const { movieData, genresData } = useSelector((state: RootState) => {
     return {
       movieData: state.movie.movieData as [],
-      page: state.movie.page as number,
       genresData: state.genres.genresData as any,
-      genres: state.genres.genres as object,
     }
   });
   
@@ -41,7 +39,6 @@ const MovieList:React.FC<any> = () => {
           movieData && movieData.map((data: any, idx: any) =>
             <Movie
               key={idx}
-              genres={genresData && genresData.data.genres.filter((d: any) => data.genre_ids.indexOf(d.id) !== -1 && d)}
               {...data}
             />
           )
