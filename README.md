@@ -5,6 +5,7 @@
 - 수동으로 세팅해보기 (React, Redux-saga, Typescript)
 - Redux-saga 적용해보기
 - Typescript 적용해보기
+- 무한 스크롤(Infinity Scroll) 구현해보기
 
 ## 사용한 스택
 - Typescript
