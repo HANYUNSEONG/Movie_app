@@ -33,3 +33,14 @@ or
 > npm run build
 > npm run deploy
 ```
+
+## redux-devtools-extension 적용해보기
+```
+> npm install --save-dev redux-devtools-extension
+```
+
+- store/index.ts
+```js
+import { composeWithDevTools } from 'redux-devtools-extension';
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+```
