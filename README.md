@@ -1,4 +1,4 @@
-# 영화 API를 사용해서 데이터를 가져와보자
+# 영화 API를 사용해서 만들어보기
 - [영화 데이터 API 사이트](https://developers.themoviedb.org/3/getting-started)
 
 ## 목표
