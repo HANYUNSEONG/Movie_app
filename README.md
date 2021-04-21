@@ -40,7 +40,6 @@ or
 > npm run build
 > npm run deploy
 ```
-<<<<<<< HEAD
 
 ## redux-devtools-extension 적용해보기
 ```
@@ -52,5 +51,3 @@ or
 import { composeWithDevTools } from 'redux-devtools-extension';
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 ```
-=======
->>>>>>> f3e9017ddd6405ac149a922fff4ea69234e3ee2e
